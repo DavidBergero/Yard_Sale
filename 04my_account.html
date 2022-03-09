@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>login</title>
+    <title>my_account</title>
     <style>
     
     :root {
@@ -48,11 +48,10 @@
         width: 30rem;
     }
 
-    .logo {
-        width: 15rem;
-        margin-bottom: 4.8rem;
-        justify-self: center;
-        display: none;
+    .title {
+        font-size: var(--lg);
+        margin-bottom: 3.2rem;
+        text-align: start;
     }
 
     .form {
@@ -60,12 +59,9 @@
         flex-direction: column;
     }
 
-    form a {
-    color: var(--hospital-green);
-    font-size: var(--sm);
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: 5.2rem;
+    .form div {
+        display: flex;
+        flex-direction: column;
     }
 
     .label {
@@ -84,7 +80,9 @@
         margin-bottom: 1.2rem;
     }
 
-    .input-email {
+    .input-name,
+    .input-email,
+    .input-password {
         margin-bottom: 2.4rem;
     }
 
@@ -100,55 +98,42 @@
         height: 4.8rem;
     }
 
-    .secondary-button {
-        background-color: var(--white);
-        border-radius: 0.8rem;
-        border: 0.1rem solid var(--hospital-green);
-        color: var(--hospital-green);
-        width: 100%;
-        cursor: pointer;
-        font-size: var(--md);
-        font-weight: bold;
-        height: 4.8rem;
-    }
-
     .login-button {
         margin-top: 1.6rem;
         margin-bottom: 3.2rem;
     }
 
     @media (max-width: 640px) {
-        .logo {
-            display: block;
+        .form {
+            height: 100%;
+            justify-content: space-between;
         }
-        .secondary-button {
-            width: 30rem;
-            position: absolute;
-            bottom: 0;
-            margin-bottom: 2.4rem;
+        .form-container {
+            height: 100%;
         }
     }
-
     </style>
 </head>
 <body>
     <div class="login">
         <div class="form-container">
-            <img src="./assets_img/YardSale_Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">Mi cuenta</h1>
 
             <form action="/" class="form">
+                <div>
+                    <!--Encapsulo en un div los label e inputs para luego poder usar un space between entre este y el botón-->
+                    <label for="name" class="label">Nombre</label>
+                    <input type="text" id="name" placeholder="Su nombre" class="input input-name">
+                
                     <label for="email" class="label">Correo electrónico</label>
-                <input type="email" id="email" placeholder="correo@ejemplo.com" class="input input-email">
-                
-                <label for="password" class="label">Contraseña</label>
-                <input type="password" id="password" placeholder="********" class="input input-password">
-                
-
-                <input type="submit" value="Ingresar" class="primary-button login-button">
-                <a href="/">Olvidé mi contraseña</a>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com" class="input input-email">
+                    
+                    <label for="password" class="label">Contraseña</label>
+                    <input type="password" id="password" placeholder="********" class="input input-password">
+                </div>
+            
+                <input type="submit" value="Guardar" class="primary-button login-button">
             </form>
-
-            <button class="secondary-button signup-button">Registrarse</button>
         </div>
     </div>
 </body>
